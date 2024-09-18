@@ -1,0 +1,219 @@
+body {
+    background-color: white /* Sets background color of page to white */
+}
+
+.hero-section {
+    background-image: url('images/background-large.jpg');
+    background-size: cover; /*covers entire area of section*/
+    background-position: center;
+    color: white;
+}
+
+.features-section {
+    background-image: url('images/flourish.png'); /* Flourish background */
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain; /* image fits within the section */
+    display: flex; /*FLEX box since we will be changing layout of how the blocks are here*/
+    /*usually row based but will change dependant on screen*/
+    justify-content: center;
+    gap: 0 2rem;
+}
+
+/* I know i probs shouldve used grid for this since it would be good for
+structure, but ngl I liked the funky layout in each size it had*/
+
+.reasons-list {
+    list-style-type: none; /*takes out bullet points from*/
+    padding: 0; /*helps space out all the points on both sides in different sizes*/
+    display: flex; /*helps all the elements look funky and go onto new lines if elems crowd the space*/
+    flex-wrap: wrap;
+    justify-content: center;/*tries to center all wrapped items*/
+    gap: 2rem;/*gap between each item in list*/
+}
+
+.reason-item {
+    display: flex; /*so number and item are directly next to each other*/
+    align-items: center;/*vertically aligns items*/
+    margin-bottom: 15px;/*mostly for when the items go into column mode*/
+    transition: transform 0.3s ease;/*hovering over the item allows it to move a bit*/
+}
+
+.reason-item:hover {
+    transform: translateX(10px);
+}
+
+.reason-number {/*essentially just the numbers and centering them*/
+    background-color: navajowhite;
+    color: black;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    display: flex;/*flexbox for circle to easily center item*/
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-right: 15px;
+}
+
+.reason-text {
+    font-size: 1rem;
+    color: black;
+}
+
+.logo {
+    max-width: 150px;
+    height: auto;
+}
+
+.feature {
+    width: 90%;
+    background-color: rgba(159, 229, 248, 0.5);
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.about-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;/*two column grid, one for image one for content*/
+    gap: 2rem; /*space between two columns*/
+    background-color: #dadbdcf6;
+    padding-bottom: 5rem;
+    padding-top: 5rem;
+}
+
+.about-us h2{
+    text-decoration: underline;
+
+}
+
+.about-us p {
+    font-size: 1rem;
+    color: #555;
+}
+
+.about-us a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.about-us a:hover {
+    text-decoration: none;
+}
+
+.cta-button {
+    display: inline-block; /*allows for changing of padding/margin*/
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    background-color: lavender;
+    color: white;
+    text-align: center;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    background-color: plum;
+    color: white;
+    text-decoration: none;
+}
+
+.cta-section {
+    background-color: #333;
+    color: white;
+}
+
+button {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 10px 20px;
+    background-color: #252d38;
+    color: wheat;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: medium;
+    width: 9rem;
+    height: 3rem;
+}
+
+button:hover {
+    background-color: #5f99d7;
+}
+
+
+@media (min-width: 320px) and (max-width: 400px) {
+    .hero-section {
+        background-image: url('images/background-extra-small.jpg');
+    }
+    .company{
+        content: url('images/image-small.png');
+    }
+    .features-section {
+        flex-direction: column; /* Stack items in a single column */
+        align-items: center; /* Center items horizontally in the column */
+    }
+    .reason-item {
+        flex: 1 1 100%; /* Each item takes up full width of the container */
+        max-width: 100%; /* Ensure items do not exceed container width */
+    }
+    .about-section {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        padding-bottom: 2rem; /* Adjust padding as needed */
+        justify-items: center;
+    }
+}
+
+/* Medium devices (tablets) */
+@media (min-width: 401px) and (max-width: 767px) {
+    .hero-section {
+        background-image: url('images/background-small.jpg');
+        
+    }
+    .company{
+        content: url('images/image-medium.png');
+    }
+    .features-section {
+        flex-direction: column; /* Stack items in a single column */
+        align-items: center; /* Center items horizontally in column */
+    }
+    .reason-item {
+        flex: 1 1 100%; /* Each item takes up full width of container */
+        max-width: 100%; /* items do not exceed container width */
+    }
+    .about-section {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        padding-bottom: 2rem;
+        justify-items: center;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        background-image: url('images/background-medium.jpg');
+    }
+    .company{
+        content: url('images/image-medium.png');
+    }
+    .features-section {
+        flex-direction: column; /* Stack items in a single column */
+        align-items:center;
+    }
+}
+
+@media (min-width: 1024px) {
+    .hero-section {
+        background-image: url('images/background-large.jpg');
+    }
+    .company{
+        content: url('images/image-large.png');
+    }
+}
+
+/* Extra large devices (large desktops) */
+@media (min-width: 1200px) {
+    .hero-section {
+        background-image: url('images/background-extra-large.jpg');
+    }
+}
